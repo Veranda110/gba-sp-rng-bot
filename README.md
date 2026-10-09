@@ -6,6 +6,13 @@ RNG manipulation needs presses that land in a 16.7 ms frame window, often minute
 
 **Supported now: Pokemon Emerald and FireRed / LeafGreen**, both tested on the reference build up to chosen shinies: a starter in Emerald; a gift, a static and a wild encounter in LeafGreen. More games are meant to follow.
 
+<p align="center">
+  <img src="docs/img/reference-build-sp.jpg" alt="Game Boy Advance SP on the boot screen with the wire tail connected" width="45%">
+  <img src="docs/img/reference-build-boards.jpg" alt="Optocoupler board and ESP32 board of the reference build" width="45%">
+</p>
+
+The reference build: the SP with its wire tail, and the two protoboards (optocouplers left, ESP32 right). Details in [docs/03-hardware.md](docs/03-hardware.md).
+
 ## How it works in one paragraph
 
 You switch the SP on. The device senses the console powering on through an isolated wire and starts its clock. You skip the intro and get to your save, the device presses the menu buttons that have to happen at fixed times, and then it presses A on exactly the frame that creates your target Pokemon. Emerald's RNG always starts from the same seed and advances once per frame, so that one press decides the Pokemon.
